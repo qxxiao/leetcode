@@ -1,11 +1,6 @@
 /**
  * @file 693.交替二进制数.cpp
- * @author qxxiao (1063064004@qq.com)
  * @brief https://leetcode-cn.com/problems/binary-number-with-alternating-bits/
- * @version 1.0
- * @date 2021-03-07
- * 
- * @copyright Copyright (c) 2021
  * 
  */
 
