@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "*.vue": "vue",
+        "*.js": "javascript",
+        ".*.cjosn": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.java": "java",
+        "*.dart": "dart",
+        "*.cc": "cpp",
+        "*.sol": "solidity",
+        "*.cc ": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "__functional_03": "cpp",
+        "functional": "cpp"
+    }
+}
