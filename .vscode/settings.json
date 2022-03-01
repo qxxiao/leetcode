@@ -16,6 +16,14 @@
         "iosfwd": "cpp",
         "iterator": "cpp",
         "__functional_03": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "complex": "cpp",
+        "cmath": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "ios": "cpp"
     }
 }
