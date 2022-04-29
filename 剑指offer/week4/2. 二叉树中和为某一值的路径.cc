@@ -14,6 +14,7 @@ struct TreeNode
 class Solution
 {
     vector<vector<int>> v;
+    vector<int> path;
 
 public:
     vector<vector<int>> findPath(TreeNode *root, int sum)
@@ -21,30 +22,21 @@ public:
 
         if (!root || sum < 0)
             return v;
-        dfs(vector<int>(), root, sum);
+        dfs(root, sum);
         return v;
     }
 
-    void dfs(vector<int> ans, TreeNode *root, int r)
+    void dfs(TreeNode *root, int r)
     {
-        if (r == root->val && !root->left && !root->right)
-        {
-            ans.push_back(root->val);
-            v.push_back(ans);
+        if (!root || r < root->val) // val>=0
             return;
-        }
-        if (r < root->val)
-            return;
-        if (r > root->val && !root->left && !root->right)
-            return;
-
-        if (r >= root->val)
-        {
-            ans.push_back(root->val);
-            if (root->left)
-                dfs(ans, root->left, r - root->val);
-            if (root->right)
-                dfs(ans, root->right, r - root->val);
-        }
+        path.push_back(root->val);
+        r -= root->val;
+        // 叶子节点
+        if (!root->left && !root->right && !r)
+            v.push_back(path);
+        dfs(root->left, r);
+        dfs(root->right, r);
+        path.pop_back();
     }
 };

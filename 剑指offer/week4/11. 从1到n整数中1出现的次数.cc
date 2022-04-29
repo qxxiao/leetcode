@@ -12,18 +12,6 @@ class Solution
 public:
     int numberOf1Between1AndN_Solution(int n)
     {
-
-        // int res=0;
-        // for(int i=1;i<=n;i++){
-
-        //     int t=i;
-        //     while(t){
-        //         if(t%10==1) res++;
-        //         t/=10;
-        //     }
-        // }
-        // return res;
-
         vector<int> num;
         while (n)
             num.push_back(n % 10), n /= 10;

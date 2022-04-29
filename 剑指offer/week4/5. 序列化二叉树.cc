@@ -13,6 +13,9 @@ struct TreeNode
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+/**********************************
+//* 层序遍历序列化二叉树
+**********************************/
 class Solution
 {
 public:
@@ -97,6 +100,66 @@ public:
             index++;
             q.push(right);
         }
+        return root;
+    }
+};
+
+/**********************************
+//* 前序递归序列化二叉树
+**********************************/
+class Solution2
+{
+public:
+    // Encodes a tree to a single string.
+    string serialize(TreeNode *root)
+    {
+        string res;
+
+        dfs_s(root, res);
+        return res;
+    }
+
+    void dfs_s(TreeNode *root, string &res)
+    {
+        if (!root)
+        {
+            res += "null ";
+            return;
+        }
+        res += to_string(root->val) + ' ';
+        dfs_s(root->left, res);
+        dfs_s(root->right, res);
+    }
+
+    // Decodes your encoded data to tree.
+    TreeNode *deserialize(string data)
+    {
+        queue<string> q;
+        for (int i = 0, j = 0; j < data.size(); j++)
+        {
+            if (data[j] != ' ')
+                continue;
+            else
+            {
+                q.push(data.substr(i, j - i));
+                i = j + 1;
+            }
+        }
+        return dfs_d(q);
+    }
+
+    TreeNode *dfs_d(queue<string> &q)
+    {
+        if (q.empty())
+            return nullptr;
+        string s = q.front();
+        q.pop();
+        if (s == "null")
+            return nullptr;
+
+        TreeNode *root = new TreeNode(stoi(s));
+        root->left = dfs_d(q);
+        root->right = dfs_d(q);
         return root;
     }
 };
