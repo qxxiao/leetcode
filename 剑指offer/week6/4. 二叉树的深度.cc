@@ -3,18 +3,15 @@
 #include <iostream>
 using namespace std;
 //* Definition for a binary tree node.
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
-class Solution
-{
+class Solution {
 public:
-    int treeDepth(TreeNode *root)
-    {
+    int treeDepth(TreeNode *root) {
 
         if (!root)
             return 0;

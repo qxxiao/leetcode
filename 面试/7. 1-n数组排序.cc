@@ -52,7 +52,7 @@ bool test(int n, int Times = 100) {
 }
 
 int main() {
-    auto arr = initializer_list<int>{1, 2, 3, 4, 5, 6};
+    // auto arr = initializer_list<int>{1, 2, 3, 4, 5, 6};
 
     if (!test(20, 1000)) {
         cout << endl << "Test failed!" << endl;
